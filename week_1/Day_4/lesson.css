@@ -5,3 +5,8 @@
 #author {
 	color: lightgrey;
 }
+img {
+	border:red solid 10px;
+	border-radius: 5px;
+	border-padding:2px;
+}
