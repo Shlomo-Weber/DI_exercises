@@ -1,0 +1,48 @@
+body {
+	font-family: 'Quicksand', sans-serif;
+	color: forestgreen;
+}
+/*body, html {
+	height: 100%;*/
+}
+.parallax {
+	 background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+	text-align: center;
+
+}
+#intro {
+	border-left: lightblue solid 2px;
+	margin-left: 8px;
+	padding-left: 20px;
+	font-size: 20px;
+}
+.jumbotron {
+	background-image: url("http://gamerselite.com/wp-content/uploads/2017/11/zelda-breath-of-the-wild-main-banner.jpg");
+	background-image: cover;
+	background-image: no-repeat;
+}
+#about {
+	display: flex;
+	justify-content: center;
+}
+.blog {
+	transition: all .2s ease-in-out;
+}
+.blog:hover {
+	transform: scale(1.02);
+}
+.projpic {
+	transition: all .2s ease-in-out;
+}
+.projpic:hover {
+	transform: scale(1.02);
+}
+#contact {
+	background: lightgrey;
+	border-radius: 15px
+}
