@@ -1,0 +1,18 @@
+#root {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 10px;
+}
+
+.singleborder {
+	border: dotted red 5px;
+}
+.solidborder {
+	border:solid green 5px;
+}
+.box {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
