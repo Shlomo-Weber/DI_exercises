@@ -31,29 +31,29 @@
 # print(ournums)
 
 # Exercise 4
-# list= []
-# a = range(2)
-# for n in a:
-#     if n == 2:
-#         list.append(n)
-#     else:
-#         list.append(-1n*2)
-# print(list)
+list= []
+a = range(2)
+for n in a:
+    if n == 2:
+        list.append(n)
+    else:
+        list.append(-1n*2)
+print(list)
 
 # Ninja Exercise
-import sys
-import random
-
-user_string = input("please write something more than 10 letters")
-if len(user_string) != 10:
-    sys.exit(1)
-    print(user_string)
-
-info = f"First Character: {user_string[0]}, Last Character: {user_string[-1]}"
-print(info)
-
-for i in range(1, len(user_string)+1):
-    print(user_string[:i])
+# import sys
+# import random
+#
+# user_string = input("please write something more than 10 letters")
+# if len(user_string) != 10:
+#     sys.exit(1)
+#     print(user_string)
+#
+# info = f"First Character: {user_string[0]}, Last Character: {user_string[-1]}"
+# print(info)
+#
+# for i in range(1, len(user_string)+1):
+#     print(user_string[:i])
 
 # jumbled = copy(user_string)
 # jumbled = random.shuffle(list(jumbled))
