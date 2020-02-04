@@ -32,6 +32,8 @@ function movingBox(){
 		}
 	},5);
 }
+
+// Click me button
 strtbutton.addEventListener('click', movingBox);
 
 function resetBox(){
@@ -47,5 +49,5 @@ function resetBox(){
 		}
 	},5);
 }
-
+// Reset Button
 resetbutton.addEventListener('click', resetBox);

@@ -1,8 +1,3 @@
-playTheGame();
-
-const HIGHER = 2;
-const LOWER = 3;
-const CORRECT = 1
 
 function playTheGame (){
 	var CompNum=Math.floor(Math.random() * 10)
