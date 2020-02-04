@@ -1,0 +1,38 @@
+body {
+	background-color: black;
+	color: white;
+	margin: auto;
+	text-align: center;
+	width: 50%
+}
+div {
+	padding: 50px;
+	border-radius: 7px;
+
+}
+.container {
+	display: grid;
+	grid-template-areas:'top top top rightside' 
+	'second second second rightside'
+	'leftside middle middle middle' 
+	'leftside bottom bottom bottom';
+	grid-gap: 10px;
+}
+#top {
+	grid-area: top; background-color: hotpink;
+ }
+#second {
+ 	grid-area: second; background-color: green;
+ }
+#middle{
+	grid-area: middle; background-color: blue;
+}
+#bottom {
+	grid-area: bottom; background-color: purple;
+}
+#leftside {
+	grid-area: leftside; background-color: yellow;
+}
+#rightside {
+	grid-area: rightside; background-color: orange;
+}

@@ -1,12 +1,13 @@
 .para {
 	border-left: solid lightgrey 5px;
 	padding-left: 5px;
+	margin-bottom: 0px;
 }
 #author {
 	color: lightgrey;
 }
-img {
-	border:red solid 10px;
-	border-radius: 5px;
-	border-padding:2px;
+#pics {
+	display: flex;
+	justify-content: space-between;
+	
 }

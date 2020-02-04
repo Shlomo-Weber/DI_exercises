@@ -46,3 +46,7 @@ h1 {
 	background: lightgrey;
 	border-radius: 15px
 }
+.figure-caption {
+	text-align: center;
+	padding-top: 5px;
+}

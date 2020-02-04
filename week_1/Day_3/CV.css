@@ -1,0 +1,141 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+	background-image: url(https://wallpaperaccess.com/full/134200.jpg);
+	background-image: cover;
+	background-repeat: no-repeat;
+	padding: 15px;
+	padding-right:100px;
+	padding-left:100px;
+}
+h1 {
+	text-align: center;
+	font-size: 3em;
+	margin-bottom: 0%;
+}
+h3 {
+	text-align: center;
+}
+h1, h3 {
+	border: solid black 3px;
+	background-color:#00e600;
+	border-radius: 50px 50px;
+	color: black;
+}
+p, h5, ul {
+		color: black;
+	}
+div {
+	border: #003300 solid 3px;
+	background-color: #80ff80;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: 7px 7px 3.5px black;
+	transition: all .3s ease-in-out;
+	opacity: 0.8;
+
+}
+div:hover {
+	transform: scale(1.02);
+	opacity: 1.0;
+}
+h4 {
+	border:solid black 2px;
+	background-color: #00e600;
+	width:20%;
+	border-radius: 15px;
+	text-align: center;
+}
+img {
+	border-radius: 100px;
+	border:solid black 2px; 
+}
+.info {
+	border:solid black 2px;
+	background-color: #00e600;
+	width:300px;
+	padding-left: 10px;
+	border-radius: 15px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+
+	#container {
+		display: grid;
+		grid-template-areas: 
+		"pic Experience Experience"
+		"Summary Experience Experience"
+		"Skills Education Education"
+		"Skills Leadership Leadership";
+		grid-gap: 15px;
+	}
+
+	#pic {
+		grid-area: pic;
+		/*display: flex;*/
+	}
+	#Summary {
+		grid-area: Summary;
+		color: black;
+		padding-left: 10px;
+		padding-bottom: 5px;
+	}
+	#Experience {
+		grid-area: Experience; 
+		color: black;
+		padding-left: 10px;
+		padding-bottom: 0px;
+	}
+	#Skills {
+		grid-area: Skills;
+		color:black;
+		padding-left: 10px;
+	}
+	#Education {
+		grid-area: Education;
+		color:black;
+		margin-bottom: 0px;
+		padding-left: 10px;
+	}
+	#Leadership {
+		grid-area: Leadership;
+		color:black;
+		padding-left: 10px;
+	}
+}
+@media only screen and (min-width: 900px) {
+	#container {
+		display: grid;
+		grid-template-areas: 
+		"pic Experience Experience Experience"
+		"Summary Experience Experience Experience"
+		"Skills Education Education Education"
+		"Skills Leadership Leadership Leadership";
+		grid-gap: 15px;
+	}
+	#pic {
+		grid-area: pic;
+	}
+	#Summary {
+		grid-area: Summary;
+		color: black;
+	}
+	#Experience {
+		grid-area: Experience; 
+		color: black;
+	}
+	#Skills {
+		grid-area: Skills;
+		color:black;
+	}
+	#Education {
+		grid-area: Education;
+		color:black;
+	}
+	#Leadership {
+		grid-area: Leadership;
+		color:black;
+	}
+}
+	
+	
