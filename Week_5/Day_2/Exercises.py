@@ -109,13 +109,23 @@ class Account:
         self.balance = balance
 
     def deposit(self):
-        amount = int(input("Please input an amount to deposit"))
+        amount = int(input("What bill do you want to deposit?"))
         if amount < 0:
             print("You cannot add a negative number")
         elif amount % 20 == 0 or amount % 50 == 0 or amount % 100 == 0:
-           bills = input("Which bill do you want to deposit?")
-           if bills == "20":
-                input("How many 20s?")
+           bills = int(input("How many bills?"))
+           total = bills*amount + hapoalim.balance
+           print(f"Deposit accepted! You deposited {bills*amount} shekels. Your current amount is {total} shekels")
+           dep_agn = input("Do you want to make another deposit?")
+           if dep_agn =="yes":
+               self.deposit()
+           elif dep_agn == "no":
+              withd = input("Do you want to make a withdrawl?")
+              if withd == "yes":
+                  self.withdraw()
+              elif withd == "no":
+                  print("Thank you! Have a grand fucking day, you dog-faced pony soldier!")
+
 
         else:
             print("Must be a 20, 50 or 100")
@@ -123,10 +133,15 @@ class Account:
 # print("Deposit accepted, you now have " + str(amount + hapoalim.balance) + " shekels")
     def withdraw(self):
         amount = int(input("Please input an amount to withdraw"))
-        if amount > hapoalim.balance:
+        if amount % 20 == 0 or amount % 50 == 0:
+            print("Withdrawl accepted, your current balance is " + str(hapoalim.balance - amount) + " shekels")
+        elif amount > hapoalim.balance:
             print("Withdrawl exceeds account limit")
         else:
-            print("Withdrawl accepted, your current balance is " + str(hapoalim.balance - amount) + " shekels")
+            print("Not a valid entry, must be in increments of either 20 or 50 shekels")
+            self.withdraw()
+
+
 
 hapoalim = Account("shlomo", 500)
 
