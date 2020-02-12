@@ -44,11 +44,11 @@ zohar = Book("Zohar", "The Rashbi", "WEHBFUERF. WRGAdfbsd. weverwb" )
 LoTR = Book("Lord of the Rings", "J.R.R. Tolkien", ".....")
 
 
-# print(zohar)
-# print(zohar + LoTR)
-# print(zohar*3)
-# print(zohar*LoTR)
-# print(zohar>LoTR)
+print(zohar)
+print(zohar + LoTR)
+print(zohar*3)
+print(zohar*LoTR)
+print(zohar>LoTR)
 
 for something in zohar:
     print(something)
