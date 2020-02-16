@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>DI Pizza</h1>
+    <p>Welcome {{ name }}</p>
+    {# This is a comment. It will be ignored. #}
+
+    {% if items|length > 0 %}
+
+        <h2>Menu:</h2>
+        <ul>
+        {% for item in items %}
+            <li>{{ item }}  <button class="btn btn-success">Add</button></li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+
+</body>
+</html>
