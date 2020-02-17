@@ -1,0 +1,13 @@
+{% extends 'shophome.html' %}
+
+<h1>BEHOLD! My Stuff!</h1> <br>
+
+{% block content %}
+    {% for item in products %}
+        <h3>{{ item ['Name'] }}</h3>
+        <p>{{ item ['Description'] }}</p>
+        <p>${{ item ['Price'] }}</p>
+        <p>{{ item ['Category'] }}</p>
+        <p>{{ item ['ProductID'] }}</p>
+    {% endfor %}
+{% endblock %}
