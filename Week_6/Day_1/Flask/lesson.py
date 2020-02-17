@@ -27,7 +27,7 @@ def my_CV(name, h1, h2, h3):
 def date_until_jan():
     jan = datetime.datetime(2021,1,1,1,1,1,1)
     diff = jan - datetime.datetime.now()
-    return f"<h1>It's {diff} until January</h1>"
+    return f"<h1>It's {diff} until January 1st</h1>"
 
 @app.route('/guess/<int:guess>')
 def guessing_game(guess):
