@@ -3,13 +3,12 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
-    <title>Fuccboi Express</title>
+    <title>Home</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
-    <h1>Welcome to the Herpderp Express</h1>
     {% block content %}
-    <h1>This is from base</h1>
+    <h1 style="color: red; font-weight:bold;">FEAST THINE EYES UPON MY GLORIOUS BUTTON</h1>
+    <a  href="{{ url_for('add_products') }}"> <button class="btn btn-primary"> CLICK ME</button></a>
     {% endblock %}
 </body>
 </html>

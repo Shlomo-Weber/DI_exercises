@@ -1,8 +1,9 @@
 {% extends 'shophome.html' %}
-
-<h1>BEHOLD! My Stuff!</h1> <br>
-
 {% block content %}
+
+<h1 style="border-bottom:blue solid 4px;">BEHOLD! My Stuff!</h1><br>
+
+
     {% for item in products %}
         <h3>{{ item ['Name'] }}</h3>
         <p>{{ item ['Description'] }}</p>
