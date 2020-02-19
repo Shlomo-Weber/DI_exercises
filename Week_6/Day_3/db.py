@@ -4,29 +4,29 @@ import json
 # json.load - takes json and formats it back to python
 def create_database(dst_file='my_file.json'):
     data = [
-        {
+        {   'id': 0,
             'name': 'iphone 9',
             'price': 799,
-            'instock': True
+            'stock': 1
         },
 
-        {
+        {   'id': 1,
             'name': 'Macbook Pro',
             'price': 4799,
-            'instock': False
+            'stock': 1
         },
 
-        {
+        {   'id': 2,
             'name': 'Apple Watch',
             'price': 10799,
-            'instock': True
+            'stock': 2
         },
 
-        {
+        {   'id': 3,
             'name': 'Apple stand pro',
             'price': 99999,
-            'instock': True
-        },
+            'stock': 3
+        }
     ]
     with open(dst_file, 'w') as file_obj:
         json.dump(data, file_obj, indent=4)

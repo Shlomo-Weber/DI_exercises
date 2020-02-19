@@ -1,28 +1,86 @@
 [
     {
+        "id": 0,
         "name": "iphone 9",
         "price": 799,
-        "instock": true
+        "stock": 1,
+        "image": "iphonepic.jpg"
     },
     {
+        "id": 1,
         "name": "Macbook Pro",
         "price": 4799,
-        "instock": false
+        "stock": 1,
+        "image": "iphonepic.jpg"
     },
     {
+        "id": 2,
         "name": "Apple Watch",
         "price": 10799,
-        "instock": true
+        "stock": 2,
+        "image": "iphonepic.jpg"
     },
     {
+        "id": 3,
         "name": "Apple stand pro",
         "price": 99999,
-        "instock": true
+        "stock": 3,
+        "image": "iphonepic.jpg"
     },
     {
+        "id": 4,
+        "name": "Emily Fleming",
+        "price": 10,
+        "category": "laps",
+        "stock": 69,
+        "image": "Mulan_Quote.jpg"
+    },
+    {
+        "id": 5,
         "name": "Ricky",
-        "price": 1,
-        "category": "Frig ahf",
-        "stock": 69
+        "price": 200,
+        "category": "phone",
+        "stock": 69420,
+        "image": "20160630022117_1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Emily Fleming",
+        "price": 10,
+        "category": "phone",
+        "stock": 4,
+        "image": "20160630000537_1.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Emily Fleming",
+        "price": 10,
+        "category": "phone",
+        "stock": 4,
+        "image": "20160630000527_1.jpg"
+    },
+    {
+        "id": 8,
+        "name": "mitch",
+        "price": 1000000,
+        "category": "acc",
+        "stock": 69420,
+        "image": "20160719022216_1.jpg"
+    },
+    {
+        "id": 9,
+        "name": "dell ",
+        "price": 200,
+        "category": "phone",
+        "stock": 4,
+        "image": "2016-02-29_00002.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Ricky",
+        "price": 100,
+        "category": "laps",
+        "stock": 4,
+        "image": "IMG_0893.JPG"
     }
 ]

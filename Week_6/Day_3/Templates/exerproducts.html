@@ -1,0 +1,18 @@
+{% extends 'exerbase.html' %}
+{% block content %}
+
+
+    {% for item in products %}
+
+    <a href="/product_details/{{item['id']}}"><h1>{{ item['name'] }}</h1></a>
+     {% if item['stock'] > 0 %}
+            <p>${{item['price'] }} </p>
+        {% else %}
+            <p class="outofstock">Out of Stock</p>
+        {% endif %}
+
+    {% endfor %}
+
+
+
+{% endblock %}

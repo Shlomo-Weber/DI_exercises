@@ -6,6 +6,7 @@
     <title>Home</title>
 </head>
 <body>
+    {% include 'navbar.html' %}
     {% block content %}
     <h1 style="color: red; font-weight:bold;">FEAST THINE EYES UPON MY GLORIOUS BUTTON</h1>
     <a  href="{{ url_for('add_products') }}"> <button class="btn btn-primary"> CLICK ME</button></a>

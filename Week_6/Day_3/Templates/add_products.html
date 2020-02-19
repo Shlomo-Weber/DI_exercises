@@ -1,26 +1,37 @@
 {% extends 'exerbase.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>Add Products</title>
-</head>
-<body>
     {% block content %}
-    <form method="post">
+    <form method="post" enctype=multipart/form-data>
     {{ form.hidden_tag() }}
-
+    <p>
     {{ form.name.label }}
     {{ form.name }}
-
+    </p>
+    <p>
     {{ form.price.label }}
-    {{ form.price }}
-
+    ${{ form.price }}
+    </p>
+    <p>
     {{ form.category.label }}
     {{ form.category }}
-
+    </p>
+    <p>
     {{ form.stock.label }}
     {{ form.stock }}
-
+    </p>
+     <p>
+    {{ form.image.label }}
+    {{ form.image }}
+    </p>
     {{ form.submit }}
     </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+        <p><a href="{{ url_for('products') }}"><button class="btn btn-primary">Continue to products </button> </a></p>
     {% endblock %}
-</body>
