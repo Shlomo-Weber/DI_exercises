@@ -1,0 +1,148 @@
+{
+    "games": [
+        {
+            "id": 1,
+            "developer": "FromSoftware",
+            "name": "Sekiro",
+            "price": 60,
+            "coverart": "Sekiro_art.jpg"
+        },
+        {
+            "id": 2,
+            "developer": "TeamNinja",
+            "name": "Nioh",
+            "price": 50,
+            "coverart": "Nioh_art.jpg"
+        },
+        {
+            "id": 3,
+            "developer": "FromSoftware",
+            "name": "BloodBorne",
+            "price": 30,
+            "coverart": "Bloodborne_art.jpg"
+        },
+        {
+            "id": 4,
+            "developer": "Deck13",
+            "name": "Surge 2",
+            "price": 55,
+            "coverart": "Surge2_art.jpg"
+        }
+    ],
+    "stores": [
+        {
+            "city": "New York",
+            "games_available": [
+                {
+                    "id": 1,
+                    "num available": 5,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "num available": 0,
+                    "consoles_available": [
+                        "PS4",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "num available": 3,
+                    "consoles_available": [
+                        "PS4"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "num available": 0,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                }
+            ]
+        },
+        {
+            "city": "Paris",
+            "games_available": [
+                {
+                    "id": 1,
+                    "num available": 10,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "num available": 5,
+                    "consoles_available": [
+                        "PS4",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "num available": 22,
+                    "consoles_available": [
+                        "PS4"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "num available": 0,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                }
+            ]
+        },
+        {
+            "city": "Jerusalem",
+            "games_available": [
+                {
+                    "id": 1,
+                    "num available": 0,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "num available": 0,
+                    "consoles_available": [
+                        "PS4",
+                        "PC"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "num available": 18,
+                    "consoles_available": [
+                        "PS4"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "num available": 2,
+                    "consoles_available": [
+                        "PS4",
+                        "Xbox",
+                        "PC"
+                    ]
+                }
+            ]
+        }
+    ]
+}
