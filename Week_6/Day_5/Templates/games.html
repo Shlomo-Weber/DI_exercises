@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<h1>Look at all the games we have</h1>
+{% for game in games %}
+
+    <h2></h2>
+    {{ game['name'] }}
+    </p>
+    <p>
+    {{ game['developer'] }}
+    </p>
+    <p>
+    <img src="{{ url_for('static', filename='images/' + game['coverart']) }}">
+    </p>
+    <p>
+     ${{ game['price'] }}
+    </p>
+
+{% endfor %}
+{% endblock %}
