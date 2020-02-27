@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: linear-gradient(to right, rgb(215, 215, 215), rgb(0, 128, 255));
+	margin-bottom: 100px;
+}
+
+h1 ,h2 {
+	text-align: center;
+	font-family: 'Quattrocento', serif;
+	font-size: 4em;
+}
+
+#button_holder {
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+}
+form {
+	padding-left: 200px;
+	padding-right: 200px;
+}
+.jumbotron{
+	text-align: center;
+	background-size: 100vw;
+	display: fixed;
+	background-image: url(https://nocamels.com/wp-content/uploads/2015/03/Voting-ballot-box-israel-1024x696.jpg);
+}
+
+#last_head_p {
+	margin-bottom: 25px;
+}
+
+#pre-survey {
+	margin-left: 150px;
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+
+#begin {
+	color: white;
+}
