@@ -1,0 +1,21 @@
+{% extends 'film_app/index.html' %}
+
+
+{% block content %}
+
+    {% for film in films %}
+       <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ film.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ film.release_date }}</h6>
+        <p class="card-text">{{ film.country }}</p>
+        <p class="card-text">{{ film.category }}</p>
+        <p class="card-text">{{ film.director.getfullname }}</p>
+        <a href="{% url 'edit_director' film.director.id %}" class="card-link">Edit Director</a>
+      </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
+

@@ -1,0 +1,11 @@
+{% extends 'film_app/index.html'%}
+
+{% block content %}
+<h1>this is {{ currentuser.username }}'s profile</h1>
+
+<h3>First Name: {{ currentuser.first_name }}</h3>
+<h3>Last Name: {{ currentuser.last_name }}</h3>
+<!--<h3>Favorite Movie: {{ currentuser.favorite_movie }}</h3>-->
+
+
+{% endblock %}
