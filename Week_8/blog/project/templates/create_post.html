@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center;">Welcome to your PostPoint profile!</h1>
+
+<h3>Let's get you started with your first blog post</h3>
+
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+     <button type="submit" class="btn btn-success">click me</button>
+    </form>
+{% endblock %}

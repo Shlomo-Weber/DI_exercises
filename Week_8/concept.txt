@@ -1,0 +1,29 @@
+What i want the blog to be/look like
+
+1. Landing page - 'welcome to the page', navbar with homepage-login-contact page, maybe a jumbo, maybe a randomize feature to link you to a random blog post
+2. Login page - each user will be able to make their own content
+3. Their individual blog posts/things they've written will be displayed
+
+
+
+1. (in command line) django-admin startproject ‘projname’
+2. cd projname
+- python manage.py startapp ‘appname’
+3. add ‘appname’ to INSTALLED_APPS
+4. Create a database
+5. Create modelsfor the data base
+
+When you’re ready to migrate the changes:
+- python manage.py makemigrations
+- pythin manage.py migrate
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres'
+    }
+}

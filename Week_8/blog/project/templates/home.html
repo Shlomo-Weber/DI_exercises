@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center;">Hello and welcome to PostPoint!</h1>
+
+<h2 style="text-align:center;">Click here to register! </h2>
+<a style="display:flex; justify-content:center;" href="{% url 'register' %}"><button type="button"> Register</button></a>
+<h4 style="text-align:center;">Already have an account? Click to login here! </h4>
+<a style="display:flex; justify-content:center;" href="{%url 'login' %}"><button type="button"> Login</button></a>
+
+{% endblock %}

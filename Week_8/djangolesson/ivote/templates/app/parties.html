@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+
+</form>
+{% for party in parties  %}
+<ul>
+    <li><h3>
+        <a class="btn btn-success btn-outline" href="{% url 'details' party.id %}">{{ party.name }}</a></h3>{{ party.votes }}
+
+    </li>
+        <li>{{ party.head }}</li>
+</ul>
+{% endfor %}
+
+{% endblock %}
