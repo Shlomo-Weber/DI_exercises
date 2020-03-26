@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<div class="row">
+    <div class="col s4 push-s4" style="background:white; opacity:.85; border-radius:5px">
+  <h2 style="text-align:center;">Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" type="submit">Sign up</button>
+  </form>
+    </div>
+</div>
+{% endblock %}

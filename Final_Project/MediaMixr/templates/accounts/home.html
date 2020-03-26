@@ -2,6 +2,36 @@
 
 
 {% block content %}
-<h1 style="text-align:center;"> Welcome to your Media Mixr!</h1>
+ <div class="row">
+    <div class="col s12 m6 l12">
+      <div class="card blue lighten-1" style="margin:auto; padding-left">
+        <div class="card-content white-text">
+          <span class="card-title"><h1 style="text-align:center;"> Welcome to your Media Mixr!</h1></span>
+            <p class="flow-text" style="text-align:center;">Media Mixr is a platform for finding and recommending various forms of media based on interest.
+                <br>
+                <br>
+              Our goal is to diversify your media intake and help you discover new experiences in the genres you're already familiar with.
+                <br>
+                <br>
+            <h4 style="text-align:center;">Why Limit Yourself?</h4></p>
+
+            <div style="height:100px"></div>
+            {% if not user.is_authenticated %}
+            <h4 style="text-align:center;">Sign up to see your personalized media recommendations today!</h4>
+        </div>
+        <div class="card-action">
+          <a href="{% url 'signup' %}" style="display:flex; justify-content: center;;" class="waves-effect  indigo accent-3 btn-large">Sign up!</a><br>
+            <p style="text-align:center;">Already have an account? Click here to log in!</p>
+             <a href="{% url 'login' %}" style="display:flex; justify-content:center; color:white;">Login</a>
+            {% else %}
+            <h4 style="text-align:center;">Let check out your profile!</h4>
+        </div>
+             <div class="card-action">
+          <a href="{% url 'profile' %}" style="display:flex; justify-content: center;;" class="waves-effect  indigo accent-3 btn-large">Profile</a><br>
+        </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

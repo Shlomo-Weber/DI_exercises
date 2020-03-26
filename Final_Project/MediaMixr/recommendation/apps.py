@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ReccomendationConfig(AppConfig):
-    name = 'reccomendation'
+    name = 'recommendation'

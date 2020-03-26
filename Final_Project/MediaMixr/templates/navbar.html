@@ -1,17 +1,28 @@
 
 <div class="container-fluid">
 <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Media Mixr</a>
+    <div class="nav-wrapper indigo accent-3">
+      <a href="{% url 'home' %}" class="brand-logo center">Media Mixr</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Logout</a></li>
+          {% if not user.is_authenticated %}
+        <li><a href=" {% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Signup</a></li>
       </ul>
         <ul class="left hide-on-med-and-down">
             <li>
-            <li><a href="#">Components</a></li>
+            <li><a href="#">Surprise me!</a></li>
             </li>
         </ul>
+        {% else %}
+
+        <li><a href=" {% url 'logout' %}">Logout</a></li>
+      </ul>
+        <ul class="left hide-on-med-and-down">
+            <li><a href="#">Surprise me!</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'your_recs' %}">Your Recommendations</a></li>
+        </ul>
+        {% endif %}
     </div>
   </nav>
 </div>

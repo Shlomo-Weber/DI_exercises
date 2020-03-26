@@ -21,5 +21,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
-    # path('rec/', include('reccomendation.urls'))
+    path('rec/', include('recommendation.urls'))
 ]
