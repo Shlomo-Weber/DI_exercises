@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<div class="container">
+ <div class="row">
+     {% for genre in genres %}
+    <div class="col l4 ">
+        <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ genre.title|truncatechars:20 }}</span>
+          <p>{{ genre.creator }}</p>
+          <p>{{ genre.type }}</p>
+            {% if surprise %}
+          <p>{{ genre.genre }}</p>
+            {% endif %}
+        </div>
+        <div class="card-action">
+          <a style="color:#304ffe" href="https://google.com/search?q={{ genre.title }} {{ genre.creator }} ">Find out more</a>
+          <a style="color:#304ffe" href="#">Forum Posts</a>
+        </div>
+      </div>
+    </div>
+     {% endfor %}
+ </div>
+    </div>
+{% endblock %}

@@ -1,24 +1,49 @@
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ <script>
+   $(document).ready(function(){
+   $('.modal').modal();
+   $('.dropdown-trigger').dropdown();
+});
+    </script>
 <div class="container-fluid">
 <nav>
     <div class="nav-wrapper indigo accent-3">
       <a href="{% url 'home' %}" class="brand-logo center">Media Mixr</a>
-      <ul class="right hide-on-med-and-down">
           {% if not user.is_authenticated %}
+        <ul class="right hide-on-med-and-down">
         <li><a href=" {% url 'login' %}">Login</a></li>
         <li><a href="{% url 'signup' %}">Signup</a></li>
       </ul>
         <ul class="left hide-on-med-and-down">
             <li>
-            <li><a href="#">Surprise me!</a></li>
+            <li><a href="{% url 'surprise_me' %}">Surprise me!</a></li>
             </li>
         </ul>
         {% else %}
-
-        <li><a href=" {% url 'logout' %}">Logout</a></li>
-      </ul>
+        <ul class="right hide-on-med-and-down">
+        <ul id="m_dropdown" class="dropdown-content">
+    <li><a href="{% url 'all_media' %}">All Genres</a></li>
+            {% for genre in genres %}
+    <li><a href="{% url 'show_genres' genre.id %}">{{ genre.name }}</a></li>
+            {% endfor %}
+        </ul>
+            <ul id="g_dropdown" class="dropdown-content">
+    <li><a href="{% url 'all_media' %}">All Media</a></li>
+            {% for interest in interests %}
+    <li><a href="{% url 'show_interests' interest.id %}">{{ interest.name }}</a></li>
+            {% endfor %}
+        </ul>
+        <ul class="dds">
+            <li><a class="dropdown-trigger" data-target="m_dropdown">
+        Genre Types<i class="material-icons right">arrow_drop_down</i> </a></li>
+        <li><a class="dropdown-trigger" data-target="g_dropdown">
+        Media Types<i class="material-icons right">arrow_drop_down</i> </a></li>
+            <li><a href=" {% url 'logout' %}">Logout</a></li>
+        </ul>
+        </ul>
         <ul class="left hide-on-med-and-down">
-            <li><a href="#">Surprise me!</a></li>
+            <li><a href="{% url 'surprise_me' %}">Surprise me!</a></li>
             <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'your_recs' %}">Your Recommendations</a></li>
         </ul>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<h1 style="text-align:center; weight:50%"> These are your {{ request.user.profile.genre }} recommendations!</h1>
+    <h1 style="text-align:center; color:white;">{{ request.user.profile.primary_interest }}</h1>
+<div class="container">
+ <div class="row">
+     {% for media in primary_media %}
+    <div class="col s12 ">
+      <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title" style="text-align:center">{{ media.title }}</span>
+          <p style="text-align:center">{{ media.creator }}</p>
+        </div>
+        <div class="card-action">
+          <a style="display:flex; justify-content:center; color:#304ffe; text-align:center" href="https://google.com/search?q={{ media.title }}"> Check out more</a>
+          <a style="display:flex; justify-content:center; color:#304ffe;text-align:center" href="#">Forum Posts</a>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+ </div>
+    </div>
+{% endblock %}

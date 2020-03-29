@@ -2,25 +2,44 @@
 {% load material_form %}
 
 {% block content %}
-<h1 style="text-align:center; weight:50%"> These are your recommendations!</h1>
-<hr>
-<!-- <div class="row">-->
-<!--    <div class="col l4 ">-->
-<!--        {% for interest in interest2 %}-->
-<!--      <div class="card blue-grey darken-1">-->
-<!--        <div class="card-content white-text">-->
-<!--          <span class="card-title">{{ interest.name }}</span>-->
-<!--          <p>I am a very simple card. I am good at containing small bits of information.-->
-<!--          I am convenient because I require little markup to use effectively.</p>-->
-<!--        </div>-->
-<!--        <div class="card-action">-->
-<!--          <a href="#">This is a link</a>-->
-<!--          <a href="#">This is a link</a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-<!--  </div>-->
+<h1 style="text-align:center; weight:50%;"> These are your {{ request.user.profile.genre }} recommendations!</h1>
+<div class="container">
+ <div class="row">
+    <div class="col l6 ">
+        <h1 style="text-align:center; color:white">{{ request.user.profile.interest_2 }}</h1>
+        {% for interest in media_list_1 %}
+      <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ interest.title }}</span>
+          <p>{{ interest.creator }}</p>
+          <p>{{ interest.type }}</p>
+        </div>
+        <div class="card-action">
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"> Check out more</a>
+          <a style="color:white" href="#">Forum Posts</a>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
 
+    <div class="col l6 ">
+        <h1 style="text-align:center; color:white">{{ request.user.profile.interest_3 }}</h1>
+        {% for interest in media_list_2 %}
+      <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ interest.title }}</span>
+         <p>{{ interest.creator }}</p>
+          <p>{{ interest.type }}</p>
+        </div>
+        <div class="card-action">
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"> Check out more</a>
+          <a style="color:white" href="#">Forum Posts</a>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+ </div>
+
+    </div>
 
 {% endblock %}

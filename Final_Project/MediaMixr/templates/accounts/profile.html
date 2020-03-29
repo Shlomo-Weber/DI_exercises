@@ -18,7 +18,8 @@
 <h3 style="text-align:center;"> Your current primary interest is  {{ request.user.profile.primary_interest.name }} </h3>
 <div style="height:200px"></div>
 <h4 style="text-align:center;"> Click here to check out your personalized recommendations!</h4>
-<a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Your Recommendations</a><br>
+<a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me Something New</a><br>
+<a href="{% url 'primary_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me more of what I like </a><br>
         </div>
 </div>
 {% endif %}

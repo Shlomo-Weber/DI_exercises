@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<div class="container">
+ <div class="row">
+     {% for media in all_media %}
+    <div class="col l4 ">
+        <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ media.title|truncatechars:20}}</span>
+          <p>{{ media.creator }}</p>
+          <p>{{ media.type }}</p>
+          <p>{{ media.genre }}</p>
+        </div>
+        <div class="card-action">
+          <a style="color:#304ffe" href="https://google.com/search?q={{ media.title }} {{ media.creator }} "> Check out more</a>
+          <a style="color:#304ffe" href="#">Forum Posts</a>
+        </div>
+      </div>
+    </div>
+     {% endfor %}
+ </div>
+    </div>
+{% endblock %}

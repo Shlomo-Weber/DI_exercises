@@ -4,9 +4,10 @@ from .views import *
 
 urlpatterns = [
     path('', your_recs, name='your_recs'),
-    # path('suprise_me/', surprise_me, name='suprise_me'),
-    # path('books/', books, name='books'),
-    # path('movies/', movies, name='movies'),
-    # path('tv_shows/', tv_shows, name='tv_shows'),
-    # path('v_games/', v_games, name='v_games')
+    path('primary/', primary_recs, name = 'primary_recs'),
+    path('allmedia/', all_media, name='all_media'),
+    path('surprise_me/', surprise_me, name='surprise_me'),
+    path('interest/<int:interest_id>', show_interest, name='show_interests'),
+    path('genre/<int:genre_id>', show_genre, name='show_genres'),
+    path('allgenres/', all_genres, name='all_genres')
 ]

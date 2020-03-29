@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 import sys
 sys.path.append("..")
 from recommendation.models import Genre
@@ -55,3 +56,10 @@ class Media(models.Model):
     title = models.CharField(max_length=100, null=False)
     creator = models.CharField(max_length=60, null=True)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+
+class ForumPost(models.Model):
+    title =models.CharField(max_length=60)
+    content =models.TextField(null=True)
+    pubdate =models.DateTimeField(default=datetime.datetime.today())
+    profile =models.ForeignKey(Profile, on_delete=models.CASCADE)
+    media = models.ForeignKey(Media, on_delete=models.CASCADE)
