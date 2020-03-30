@@ -4,6 +4,26 @@
 {% block content %}
 <h1 style="text-align:center; weight:50%;"> These are your {{ request.user.profile.genre }} recommendations!</h1>
 <div class="container">
+<!-- Update Form       -->
+    <h6 style="text-align:center"> Change genre</h6>
+        <!-- Modal Trigger -->
+<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect indigo accent-3 btn modal-trigger" href="#modal1">Edit</a>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form method="post">
+    {% csrf_token %}
+   {% form form=form %}{% endform %}
+    <br>
+    <div class="modal-footer">
+<button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
+    </div>
+      </form>
+    </div>
+  </div>
+    </div>
+
+<div class="container">
  <div class="row">
     <div class="col l6 ">
         <h1 style="text-align:center; color:white">{{ request.user.profile.interest_2 }}</h1>

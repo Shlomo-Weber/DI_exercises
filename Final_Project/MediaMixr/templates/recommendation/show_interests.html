@@ -2,6 +2,7 @@
 {% load material_form %}
 
 {% block content %}
+<h1>{{ request.interests.type }}</h1>
 <div class="container">
  <div class="row">
      {% for interest in interests %}
@@ -10,9 +11,9 @@
         <div class="card-content white-text">
           <span class="card-title">{{ interest.title|truncatechars:20 }}</span>
           <p>{{ interest.creator }}</p>
-          <p>{{ interest.type }}</p>
-            {% if surprise %}
           <p>{{ interest.genre }}</p>
+            {% if surprise %}
+          <p>{{ interest.type }}</p>
             {% endif %}
         </div>
         <div class="card-action">

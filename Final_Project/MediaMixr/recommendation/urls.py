@@ -9,5 +9,6 @@ urlpatterns = [
     path('surprise_me/', surprise_me, name='surprise_me'),
     path('interest/<int:interest_id>', show_interest, name='show_interests'),
     path('genre/<int:genre_id>', show_genre, name='show_genres'),
-    path('allgenres/', all_genres, name='all_genres')
+    path('allgenres/', all_genres, name='all_genres'),
+    path('rec_media/', recommend_media, name='rec_media')
 ]

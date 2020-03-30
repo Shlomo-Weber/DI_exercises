@@ -7,20 +7,39 @@
 <div class="row">
     <div class="col s4 push-s4" style="background:white; opacity:.85; border-radius:5px">
 {% if not request.user.profile.primary_interest %}
-        <h1 style="text-align:center; color:white;">Let's find out more about you </h1>
-
+        <h1 style="text-align:center; color:#304ffe">Let's find out more about you </h1>
+<!--Initial Form-->
 <form method="post">
     {% csrf_token %}
    {% form form=form %}{% endform %}
     <br>
-    <button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" type="submit">Submit</button></form>
+    <button class="waves-effect  indigo accent-3 btn-large" name="create" style="margin-bottom:20px;" type="submit">Submit</button></form>
 {% else %}
 <h3 style="text-align:center;"> Your current primary interest is  {{ request.user.profile.primary_interest.name }} </h3>
-<div style="height:200px"></div>
-<h4 style="text-align:center;"> Click here to check out your personalized recommendations!</h4>
+<div style="height:30px"></div>
+        <h4 style="text-align:center;"> Click here to check out your personalized recommendations!</h4>
 <a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me Something New</a><br>
 <a href="{% url 'primary_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me more of what I like </a><br>
-        </div>
+
+<!-- Update Form       -->
+    <h6 style="text-align:center"> Want to change your genre/interests?</h6>
+        <!-- Modal Trigger -->
+<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect indigo accent-3 btn modal-trigger" href="#modal1">Edit</a>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form method="post">
+    {% csrf_token %}
+   {% form form=form %}{% endform %}
+    <br>
+    <div class="modal-footer">
+<button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
+    </div>
+      </form>
+    </div>
+  </div>
+  </div>
 </div>
+ </div>
 {% endif %}
 {% endblock %}

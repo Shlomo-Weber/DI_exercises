@@ -37,11 +37,18 @@ def login(request):
 def profile(request):
     if request.method =="POST":
         form = ProfileForm(request.POST)
-        if form.is_valid():
+        if form.is_valid() and 'create' in request.POST:
             interests = form.save(commit=False)
             interests.user = request.user
             interests.save()
             return redirect('your_recs')
+        elif form.is_valid() and 'update' in request.POST:
+            profile = request.user.profile
+            profile.primary_interest = form.cleaned_data['primary_interest']
+            profile.interest_2 = form.cleaned_data['interest_2']
+            profile.interest_3 = form.cleaned_data['interest_3']
+            profile.genre = form.cleaned_data['genre']
+            profile.save()
     else:
         form = ProfileForm()
     return render(request, 'accounts/profile.html', {'form':form})
@@ -49,3 +56,4 @@ def profile(request):
 def logout(request):
 
     return render(request, 'accounts/home.html')
+

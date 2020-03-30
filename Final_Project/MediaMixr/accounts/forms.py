@@ -32,3 +32,7 @@ class ProfileForm(forms.ModelForm):
             'interest_3': Select(attrs={'class': 'select'}),
             'genre': Select(attrs={'class': 'select'})
         }
+class GenreForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['genre']

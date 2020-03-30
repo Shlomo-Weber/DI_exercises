@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 import sys
 sys.path.append("..")
+from accounts.forms import GenreForm
 from accounts.models import *
 from recommendation.models import Genre
+from recommendation.forms import Recommend_MediaForm
 import random
 # Create your views here.
 
@@ -28,13 +30,28 @@ def your_recs(request):
     profile = request.user.profile
     media_list_1 = Media.objects.filter(genre=profile.genre, type=profile.interest_2)
     media_list_2 = Media.objects.filter(genre=profile.genre, type= profile.interest_3)
-
-    return render(request, 'recommendation/your_recs.html', {'media_list_1':media_list_1, 'media_list_2':media_list_2})
+    form = GenreForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            profile.genre = form.cleaned_data['genre']
+            profile.save()
+            return redirect('your_recs')
+    else:
+        form = GenreForm()
+    return render(request, 'recommendation/your_recs.html', {'media_list_1':media_list_1, 'media_list_2':media_list_2, 'form':form})
 
 def primary_recs(request):
     profile = request.user.profile
     primary_media = Media.objects.filter(genre = profile.genre, type = profile.primary_interest)
-    return render(request, 'recommendation/primary_recs.html', {'primary_media':primary_media})
+    form = GenreForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            profile.genre = form.cleaned_data['genre']
+            profile.save()
+            return redirect('primary_recs')
+    else:
+        form = GenreForm()
+    return render(request, 'recommendation/primary_recs.html', {'primary_media':primary_media, 'form':form})
 
 def all_media(request):
     all_media = Media.objects.all()
@@ -58,3 +75,13 @@ def all_genres(request):
     all_genres = Genre.objects.all()
 
     return render(request, 'recommendation/all_genres.html', {'all_genres':all_genres})
+
+def recommend_media(request):
+    if request.method == 'POST':
+        form = Recommend_MediaForm(request.POST)
+        if form.is_valid():
+            new_media = form.save()
+            return redirect('all_media')
+    else:
+        form = Recommend_MediaForm()
+    return render(request, 'recommendation/rec_media.html', {'form':form})
