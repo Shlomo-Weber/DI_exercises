@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+<h2 style="text-align:center;">Media Mixr Forum</h2>
+<div class="container">
+  <a href="{% url 'create_post' %}"><button style="display:flex; justify-content:center; margin-bottom:20px" class="waves-effect deep-purple darken-2 btn-large">Create a Post</button></a>
+  <div class="row">
+      {% for post in posts %}
+    <div class="col l4">
+      <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ post.title }}</span>
+           <h5>{{ post.content }}</h5>
+          <p>{{ post.pubdate }}</p>
+          <p>{{ post.media }}</p>
+          <br>
+          <p>{{ post.profile.user }}</p>
+
+        </div>
+        <div class="card-action">
+          <a href="#" style="color:white"><button class="waves-effect deep-purple darken-2 btn-small">Comment</button></a>
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+    </div>
+  </div>
+   </div>
+{% endblock %}

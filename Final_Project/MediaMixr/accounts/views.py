@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as dlogin, logout as dlogout, authenticate
 from .forms import SignUpForm, ProfileForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 # Create your views here.
 
 
@@ -17,6 +18,7 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
+            messages.success(request, f'New User Created: Welcome {username}')
             dlogin(request, user)
             return redirect('login')
     else:
@@ -29,6 +31,7 @@ def login(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user:
+            messages.success(request, "You are now logged in!")
             dlogin(request, user)
         else:
             return render(request, 'registration/login.html')

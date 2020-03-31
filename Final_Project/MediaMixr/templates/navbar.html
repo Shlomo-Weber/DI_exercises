@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div class="navbar-fixed">
 <nav>
-    <div class="nav-wrapper indigo accent-3">
+    <div class="nav-wrapper deep-purple darken-2">
       <a href="{% url 'home' %}" class="brand-logo center">Media Mixr</a>
           {% if not user.is_authenticated %}
         <ul class="right hide-on-med-and-down">
@@ -24,7 +24,7 @@
         {% else %}
         <ul class="right hide-on-med-and-down">
         <ul id="m_dropdown" class="dropdown-content">
-    <li><a href="{% url 'all_media' %}">All Genres</a></li>
+    <li><a href="{% url 'all_genres' %}">All Genres</a></li>
             {% for genre in genres %}
     <li><a href="{% url 'show_genres' genre.id %}">{{ genre.name }}</a></li>
             {% endfor %}
@@ -40,7 +40,7 @@
         Genre Types<i class="material-icons right">arrow_drop_down</i> </a></li>
         <li><a class="dropdown-trigger" data-target="g_dropdown">
         Media Types<i class="material-icons right">arrow_drop_down</i> </a></li>
-            <li><a href="#">Forum</a></li>
+            <li><a href="{% url 'forum_home' %}">Forum</a></li>
             <li><a href=" {% url 'logout' %}">Logout</a></li>
         </ul>
         </ul>

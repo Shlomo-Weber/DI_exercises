@@ -2,20 +2,18 @@
 {% load material_form %}
 
 {% block content %}
+<h2 style="text-align:center"> These are our genre types</h2>
+<h3 style="text-align:center"> Click on one to find out more!</h3>
 <div class="container">
  <div class="row">
      {% for genre in all_genres %}
     <div class="col l4 ">
-        <div class="card blue lighten-1">
+        <div class="card deep-purple darken-2">
         <div class="card-content white-text">
-          <span class="card-title">{{ genre.title|truncatechars:20}}</span>
-          <p>{{ genre.creator }}</p>
-          <p>{{ genre.type }}</p>
-          <p>{{ media.genre }}</p>
+          <span class="card-title" style="text-align:center">{{ genre.name|truncatechars:20}}</span>
         </div>
         <div class="card-action">
-          <a style="color:#304ffe" href="https://google.com/search?q={{ media.title }} {{ media.creator }} "> Check out more</a>
-          <a style="color:#304ffe" href="#">Forum Posts</a>
+          <a style="color:white; text-align:center;" href="{% url 'show_genres' genre.id %}"> Check out more</a>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 {% load material_form %}
 
 {% block content %}
-<h2 style="text-align:center; color:white;">Hello {{ request.user.username }}</h2>
+<h2 style="text-align:center; color:black;">Hello {{ request.user.username }}</h2>
 
 <div class="row">
     <div class="col s4 push-s4" style="background:white; opacity:.85; border-radius:5px">
@@ -13,18 +13,18 @@
     {% csrf_token %}
    {% form form=form %}{% endform %}
     <br>
-    <button class="waves-effect  indigo accent-3 btn-large" name="create" style="margin-bottom:20px;" type="submit">Submit</button></form>
+    <button class="waves-effect  deep-purple darken-2 btn-large" name="create" style="margin-bottom:20px;" type="submit">Submit</button></form>
 {% else %}
 <h3 style="text-align:center;"> Your current primary interest is  {{ request.user.profile.primary_interest.name }} </h3>
 <div style="height:30px"></div>
         <h4 style="text-align:center;"> Click here to check out your personalized recommendations!</h4>
-<a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me Something New</a><br>
-<a href="{% url 'primary_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  indigo accent-3 btn-large">Show me more of what I like </a><br>
+<a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  deep-purple darken-2 btn-large">Show me Something New</a><br>
+<a href="{% url 'primary_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  deep-purple darken-2 btn-large">Show me more of what I like </a><br>
 
 <!-- Update Form       -->
     <h6 style="text-align:center"> Want to change your genre/interests?</h6>
         <!-- Modal Trigger -->
-<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect indigo accent-3 btn modal-trigger" href="#modal1">Edit</a>
+<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect deep-purple darken-2 btn modal-trigger" href="#modal1">Edit</a>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -33,7 +33,7 @@
    {% form form=form %}{% endform %}
     <br>
     <div class="modal-footer">
-<button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
+<button class="waves-effect  deep-purple darken-2 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
     </div>
       </form>
     </div>

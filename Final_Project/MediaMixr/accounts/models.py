@@ -57,3 +57,15 @@ class Media(models.Model):
     creator = models.CharField(max_length=60, null=True)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False)
+
+    # def __str__(self):
+    #     return f'Type: {self.type}'
+    #
+    # def __str__(self):
+    #     return f'Title: {self.title}'
+    #
+    # def __str__(self):
+    #     return f'Creator: {self.creator}'
+
+    def __str__(self):
+        return self.title

@@ -7,7 +7,7 @@
 <!-- Update Form       -->
     <h6 style="text-align:center"> Change genre</h6>
         <!-- Modal Trigger -->
-<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect indigo accent-3 btn modal-trigger" href="#modal1">Edit</a>
+<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect deep-purple darken-2 btn modal-trigger" href="#modal1">Edit</a>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -16,7 +16,7 @@
    {% form form=form %}{% endform %}
     <br>
     <div class="modal-footer">
-<button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
+<button class="waves-effect  deep-purple darken-2 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
     </div>
       </form>
     </div>
@@ -27,17 +27,19 @@
 <div class="container">
  <div class="row">
      {% for media in primary_media %}
+     {% if media.approved %}
     <div class="col s12 ">
-      <div class="card blue lighten-1">
+      <div class="card deep-purple darken-3">
         <div class="card-content white-text">
           <span class="card-title" style="text-align:center">{{ media.title }}</span>
           <p style="text-align:center">{{ media.creator }}</p>
         </div>
         <div class="card-action">
-          <a style="display:flex; justify-content:center; color:#304ffe; text-align:center" href="https://google.com/search?q={{ media.title }}"> Check out more</a>
-          <a style="display:flex; justify-content:center; color:#304ffe;text-align:center" href="#">Forum Posts</a>
+            <a href="https://google.com/search?q={{ media.title }}" style="display:flex; justify-content:center; color:white;"> <button class="waves-effect blue lighten-1 btn-large">Find out more</button></a>
+          <a href="{% url 'create_mediapost' media.id %}" style="display:flex; justify-content:center; color:white;"><button class="waves-effect blue lighten-1 btn-large">Write review</button></a>
         </div>
       </div>
+        {% endif %}
         {% endfor %}
     </div>
  </div>

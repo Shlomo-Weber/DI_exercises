@@ -6,6 +6,7 @@ from accounts.models import *
 from recommendation.models import Genre
 from recommendation.forms import Recommend_MediaForm
 import random
+from django.contrib import messages
 # Create your views here.
 
 
@@ -55,21 +56,22 @@ def primary_recs(request):
 
 def all_media(request):
     all_media = Media.objects.all()
-
-    return render(request, 'recommendation/all_media.html', {'all_media':all_media})
+    page_h1 = 'This is all our media'
+    return render(request, 'recommendation/show_interests.html', {'all_media':all_media, 'page_h1':page_h1})
 
 def show_interest(request, interest_id):
     interests = Media.objects.filter(type__id=interest_id)
-
-    return render(request, 'recommendation/show_interests.html', {'interests':interests})
+    page_h1 = interests[0].type.name
+    return render(request, 'recommendation/show_interests.html', {'all_media':interests, 'page_h1':page_h1})
 
 def surprise_me(request):
     random_media = random.choices(Media.objects.all(), k=6)
-    return render(request, 'recommendation/show_interests.html', {'interests':random_media, 'surprise':True})
+    return render(request, 'recommendation/show_interests.html', {'all_media':random_media, 'surprise':True})
 
 def show_genre(request, genre_id):
     genres = Media.objects.filter(genre__id=genre_id)
-    return render(request, 'recommendation/show_genres.html', {'genres':genres})
+    page_h1 = genres[0].genre.name
+    return render(request, 'recommendation/show_interests.html', {'all_media':genres, 'page_h1':page_h1})
 
 def all_genres(request):
     all_genres = Genre.objects.all()
@@ -81,7 +83,8 @@ def recommend_media(request):
         form = Recommend_MediaForm(request.POST)
         if form.is_valid():
             new_media = form.save()
-            return redirect('all_media')
+            messages.success(request, 'Thank you! Your recommendation is pending approval by our admins.')
+            return redirect('rec_media')
     else:
         form = Recommend_MediaForm()
     return render(request, 'recommendation/rec_media.html', {'form':form})

@@ -4,8 +4,8 @@
 {% block content %}
  <div class="row">
     <div class="col s12 m6 l12">
-      <div class="card blue lighten-1" style="margin:auto; padding-left">
-        <div class="card-content white-text">
+      <div class="card" style="margin:auto; margin-left:40px; margin-right:40px; background:white; opacity:.75; border-radius:5px; margin-top: 30px">
+        <div class="card-content" style="color:black; opacity:1;">
           <span class="card-title"><h1 style="text-align:center;"> Welcome to your Media Mixr!</h1></span>
             <p class="flow-text" style="text-align:center;">Media Mixr is a platform for finding and recommending various forms of media based on interest.
                 <br>
@@ -27,7 +27,7 @@
             <h4 style="text-align:center;">Let check out your profile!</h4>
         </div>
              <div class="card-action">
-          <a href="{% url 'profile' %}" style="display:flex; justify-content: center;;" class="waves-effect  indigo accent-3 btn-large">Profile</a><br>
+          <a href="{% url 'profile' %}" style="display:flex; justify-content: center;;" class="waves-effect  deep-purple darken-3 btn-large">Profile</a><br>
         </div>
           {% endif %}
       </div>

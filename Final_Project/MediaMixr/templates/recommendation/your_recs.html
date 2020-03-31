@@ -2,12 +2,14 @@
 {% load material_form %}
 
 {% block content %}
-<h1 style="text-align:center; weight:50%;"> These are your {{ request.user.profile.genre }} recommendations!</h1>
+<div style="text-align:center; weight:50%;">
+<h1> These are your {{ request.user.profile.genre }} recommendations!</h1>
+</div>
 <div class="container">
 <!-- Update Form       -->
     <h6 style="text-align:center"> Change genre</h6>
         <!-- Modal Trigger -->
-<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect indigo accent-3 btn modal-trigger" href="#modal1">Edit</a>
+<a style="display:flex; justify-content: center; margin-bottom:30px" class="waves-effect deep-purple darken-2 btn modal-trigger" href="#modal1">Choose</a>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -16,7 +18,7 @@
    {% form form=form %}{% endform %}
     <br>
     <div class="modal-footer">
-<button class="waves-effect  indigo accent-3 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
+<button class="waves-effect  deep-purple darken-2 btn-large" style="margin-bottom:20px;" name="update" type="submit">Submit</button>
     </div>
       </form>
     </div>
@@ -26,34 +28,34 @@
 <div class="container">
  <div class="row">
     <div class="col l6 ">
-        <h1 style="text-align:center; color:white">{{ request.user.profile.interest_2 }}</h1>
+        <h1 style="text-align:center; color:black">{{ request.user.profile.interest_2 }}</h1>
         {% for interest in media_list_1 %}
-      <div class="card blue lighten-1">
+      <div class="card deep-purple darken-2">
         <div class="card-content white-text">
           <span class="card-title">{{ interest.title }}</span>
           <p>{{ interest.creator }}</p>
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"> Check out more</a>
-          <a style="color:white" href="#">Forum Posts</a>
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"> <button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" href="{% url 'create_post' %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>
         {% endfor %}
     </div>
 
     <div class="col l6 ">
-        <h1 style="text-align:center; color:white">{{ request.user.profile.interest_3 }}</h1>
+        <h1 style="text-align:center; color:black">{{ request.user.profile.interest_3 }}</h1>
         {% for interest in media_list_2 %}
-      <div class="card blue lighten-1">
+      <div class="card deep-purple darken-2">
         <div class="card-content white-text">
           <span class="card-title">{{ interest.title }}</span>
          <p>{{ interest.creator }}</p>
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"> Check out more</a>
-          <a style="color:white" href="#">Forum Posts</a>
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }}"><button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" href="{% url 'create_post' %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>
         {% endfor %}
@@ -61,5 +63,4 @@
  </div>
 
     </div>
-
 {% endblock %}
