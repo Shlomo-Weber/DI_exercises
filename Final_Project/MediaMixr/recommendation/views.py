@@ -57,7 +57,10 @@ def primary_recs(request):
 def all_media(request):
     all_media = Media.objects.all()
     page_h1 = 'This is all our media'
-    return render(request, 'recommendation/show_interests.html', {'all_media':all_media, 'page_h1':page_h1})
+    # if request.method=='POST':
+    #     media_title = request.POST.get('media')
+    #     all_media=Media.objects.filter(title=media_title)
+    return render(request, 'recommendation/show_interests.html', {'all_media':all_media, 'page_h1':page_h1, 'everything':True})
 
 def show_interest(request, interest_id):
     interests = Media.objects.filter(type__id=interest_id)

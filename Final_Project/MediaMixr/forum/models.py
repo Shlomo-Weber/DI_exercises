@@ -19,4 +19,8 @@ class ForumPost(models.Model):
         return f'Profile:{self.profile}'
 
 
-# class ForumComment(models.Model):
+class ForumComment(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    post = models.ForeignKey(ForumPost, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)

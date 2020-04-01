@@ -9,7 +9,21 @@ from accounts.models import Media
 
 def forum_main(request):
     posts = ForumPost.objects.all()
-    return render(request, 'forum/forum_home.html', {'posts': posts})
+    # comments = ForumComment.objects.all()
+    if request.method == 'POST':
+        form = ForumCommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            post_id = request.POST['post']
+            post = ForumPost.objects.get(pk=post_id)
+            print(request.POST)
+            comment.post = post
+            comment.profile = request.user.profile
+            comment.save()
+            return redirect('forum_home')
+    else:
+        form = ForumCommentForm()
+    return render(request, 'forum/forum_home.html', {'posts': posts, 'form':form})
 
 def create_post(request):
     if request.method == 'POST':

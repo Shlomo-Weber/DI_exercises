@@ -13,3 +13,7 @@ class ForumMediaPostForm(ModelForm):
         model = ForumPost
         fields = ['title', 'content',]
 
+class ForumCommentForm(ModelForm):
+    class Meta:
+        model = ForumComment
+        fields = ['content']

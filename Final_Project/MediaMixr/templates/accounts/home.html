@@ -15,14 +15,14 @@
                 <br>
             <h4 style="text-align:center;">Why Limit Yourself?</h4></p>
 
-            <div style="height:100px"></div>
+            <div style="height:50px"></div>
             {% if not user.is_authenticated %}
             <h4 style="text-align:center;">Sign up to see your personalized media recommendations today!</h4>
         </div>
         <div class="card-action">
-          <a href="{% url 'signup' %}" style="display:flex; justify-content: center;;" class="waves-effect  indigo accent-3 btn-large">Sign up!</a><br>
+          <a href="{% url 'signup' %}" style="display:flex; justify-content: center;;" class="waves-effect  deep-purple darken-3 btn-large">Sign up!</a><br>
             <p style="text-align:center;">Already have an account? Click here to log in!</p>
-             <a href="{% url 'login' %}" style="display:flex; justify-content:center; color:white;">Login</a>
+             <a href="{% url 'login' %}" style="display:flex; justify-content:center;" class="waves-effect  deep-purple darken-3 btn-large">Login</a>
             {% else %}
             <h4 style="text-align:center;">Let check out your profile!</h4>
         </div>

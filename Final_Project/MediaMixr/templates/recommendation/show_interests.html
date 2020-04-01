@@ -3,6 +3,22 @@
 
 {% block content %}
 <h1 style="text-align:center">{{ page_h1 }}</h1>
+<br>
+    {% if everything %}
+<div id="filter" class="container" style="width:50%">
+    <h6 style="text-align:center">To make your search easier, try this</h6>
+   {% comment%} <form method="post">
+        {% csrf_token %} {% endcomment %}
+<input list="media" name="media" style="border:#512da8 solid 2px; border-radius:2px" placeholder="Search...">
+        <datalist id="media">
+        {% for media in all_media %}
+        <option value="{{ media.title }}">
+        {% endfor %}
+    </datalist>
+<button type="submit" class="waves-effect blue lighten-1 btn-small" style="display:flex; justify-content:center;">Search</button>
+        </form>
+    </div>
+    {% endif %}
 <div class="container">
  <div class="row">
      {% for media in all_media %}
@@ -27,4 +43,7 @@
      {% endfor %}
  </div>
     </div>
+<script>
+
+</script>
 {% endblock %}

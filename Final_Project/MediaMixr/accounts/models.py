@@ -13,6 +13,7 @@ class Profile(models.Model):
     interest_2 = models.ForeignKey('Interest', on_delete=models.CASCADE, related_name='i2')
     interest_3 = models.ForeignKey('Interest', on_delete=models.CASCADE, related_name='i3')
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
+    avatar = models.ImageField(default='static/images/avatar.jpeg', upload_to='media')
 
     def __str__(self):
         return self.user

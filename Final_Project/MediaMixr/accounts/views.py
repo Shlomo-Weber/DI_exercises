@@ -46,12 +46,15 @@ def profile(request):
             interests.save()
             return redirect('your_recs')
         elif form.is_valid() and 'update' in request.POST:
-            profile = request.user.profile
-            profile.primary_interest = form.cleaned_data['primary_interest']
-            profile.interest_2 = form.cleaned_data['interest_2']
-            profile.interest_3 = form.cleaned_data['interest_3']
-            profile.genre = form.cleaned_data['genre']
-            profile.save()
+            form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+            # profile = request.user.profile
+            # profile.primary_interest = form.cleaned_data['primary_interest']
+            # profile.interest_2 = form.cleaned_data['interest_2']
+            # profile.interest_3 = form.cleaned_data['interest_3']
+            # profile.genre = form.cleaned_data['genre']
+            # profile.avatar = form.cleaned_data['avatar']
+            # profile.save()
+            form.save()
     else:
         form = ProfileForm()
     return render(request, 'accounts/profile.html', {'form':form})

@@ -23,4 +23,4 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('rec/', include('recommendation.urls')),
     path('forum/', include('forum.urls'))
-]
+] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
