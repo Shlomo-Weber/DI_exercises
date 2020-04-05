@@ -7,8 +7,8 @@
     {% if everything %}
 <div id="filter" class="container" style="width:50%">
     <h6 style="text-align:center">To make your search easier, try this</h6>
-   {% comment%} <form method="post">
-        {% csrf_token %} {% endcomment %}
+    <form method="post">
+        {% csrf_token %}
 <input list="media" name="media" style="border:#512da8 solid 2px; border-radius:2px" placeholder="Search...">
         <datalist id="media">
         {% for media in all_media %}

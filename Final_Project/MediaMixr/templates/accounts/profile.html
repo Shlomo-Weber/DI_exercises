@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col s4 push-s4" style="background:white; opacity:.85; border-radius:5px">
 {% if not request.user.profile.primary_interest %}
-        <h1 style="text-align:center; color:#304ffe">Let's find out more about you </h1>
+        <h1 style="text-align:center;">Let's find out more about you </h1>
 <!--Initial Form-->
 <form method="post">
     {% csrf_token %}
@@ -15,9 +15,9 @@
     <br>
     <button class="waves-effect  deep-purple darken-2 btn-large" name="create" style="margin-bottom:20px;" type="submit">Submit</button></form>
 {% else %}
-<h3 style="text-align:center;"> Your current primary interest is  {{ request.user.profile.primary_interest.name }} </h3>
+<h3 style="text-align:center;"> Your current primary interest is  {{ request.user.profile.genre.name }} {{ request.user.profile.primary_interest.name }} </h3>
 <div style="height:30px"></div>
-        <h4 style="text-align:center;"> Click here to check out your personalized recommendations!</h4>
+        <h4 style="text-align:center;">Check out your personalized Recs here!</h4>
 <a href="{% url 'your_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  deep-purple darken-2 btn-large">Show me Something New</a><br>
 <a href="{% url 'primary_recs' %}" style="display:flex; justify-content: center; margin-left:100px;margin-right:100px" class="waves-effect  deep-purple darken-2 btn-large">Show me more of what I like </a><br>
 

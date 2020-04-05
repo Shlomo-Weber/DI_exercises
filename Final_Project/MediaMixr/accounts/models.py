@@ -17,14 +17,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user
-    def __str__(self):
-        return self.primary_interest
-    def __str__(self):
-        return self.interest_2
-    def __str__(self):
-        return self.interest_3
-    def __str__(self):
-        return self.genre
+    # def __str__(self):
+    #     return self.primary_interest
+    # def __str__(self):
+    #     return self.interest_2
+    # def __str__(self):
+    #     return self.interest_3
+    # def __str__(self):
+    #     return self.genre
 
 class Interest(models.Model):
     name = models.CharField(max_length=30,null=True)

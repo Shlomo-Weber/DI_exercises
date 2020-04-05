@@ -6,25 +6,28 @@
     <div class="col s12 m6 l12">
       <div class="card" style="margin:auto; margin-left:40px; margin-right:40px; background:white; opacity:.75; border-radius:5px; margin-top: 30px">
         <div class="card-content" style="color:black; opacity:1;">
-          <span class="card-title"><h1 style="text-align:center;"> Welcome to your Media Mixr!</h1></span>
-            <p class="flow-text" style="text-align:center;">Media Mixr is a platform for finding and recommending various forms of media based on interest.
-                <br>
-                <br>
-              Our goal is to diversify your media intake and help you discover new experiences in the genres you're already familiar with.
-                <br>
-                <br>
-            <h4 style="text-align:center;">Why Limit Yourself?</h4></p>
-
-            <div style="height:50px"></div>
+          <span class="card-title"><h1 style="text-align:center;">Welcome to Get Rec'd!</h1></span>
             {% if not user.is_authenticated %}
+            <p class="flow-text" style="text-align:center;">Get Rec'd is a platform for discovering new forms of media based on interest.
+                <br>
+                <br>
+              If you're looking for a recommendation, we can help you find something new!
+                <br>
+                <br>
+            <h4 style="text-align:center;">Make an account <br>
+            <i class="material-icons">keyboard_arrow_down</i><br>
+            Search a genre <br>
+            <i class="material-icons">keyboard_arrow_down</i> <br>
+            Get Rec'd!</h4></p>
+            <div style="height:50px"></div>
             <h4 style="text-align:center;">Sign up to see your personalized media recommendations today!</h4>
         </div>
         <div class="card-action">
-          <a href="{% url 'signup' %}" style="display:flex; justify-content: center;;" class="waves-effect  deep-purple darken-3 btn-large">Sign up!</a><br>
+          <a href="{% url 'signup' %}" style="display:flex; justify-content: center;;" class="waves-effect deep-purple darken-3 btn-large">Sign up!</a><br>
             <p style="text-align:center;">Already have an account? Click here to log in!</p>
-             <a href="{% url 'login' %}" style="display:flex; justify-content:center;" class="waves-effect  deep-purple darken-3 btn-large">Login</a>
+             <a href="{% url 'login' %}" style="display:flex; justify-content:center;" class="waves-effect deep-purple darken-3 btn-large">Login</a>
             {% else %}
-            <h4 style="text-align:center;">Let check out your profile!</h4>
+            <h4 style="text-align:center;">Let's check out your profile!</h4>
         </div>
              <div class="card-action">
           <a href="{% url 'profile' %}" style="display:flex; justify-content: center;;" class="waves-effect  deep-purple darken-3 btn-large">Profile</a><br>

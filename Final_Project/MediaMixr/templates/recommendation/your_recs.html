@@ -30,6 +30,7 @@
     <div class="col l6 ">
         <h1 style="text-align:center; color:black">{{ request.user.profile.interest_2 }}</h1>
         {% for interest in media_list_1 %}
+        {% if interest.approved %}
       <div class="card deep-purple darken-2">
         <div class="card-content white-text">
           <span class="card-title">{{ interest.title }}</span>
@@ -37,16 +38,18 @@
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }}{{ interest.creator }}"> <button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"> <button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
           <a style="color:white" href="{% url 'create_mediapost' interest.id %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>
+        {% endif %}
         {% endfor %}
     </div>
 
     <div class="col l6 ">
         <h1 style="text-align:center; color:black">{{ request.user.profile.interest_3 }}</h1>
         {% for interest in media_list_2 %}
+        {% if interest.approved %}
       <div class="card deep-purple darken-2">
         <div class="card-content white-text">
           <span class="card-title">{{ interest.title }}</span>
@@ -54,10 +57,11 @@
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }}{{ interest.creator }}"><button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"><button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
           <a style="color:white" href="{% url 'create_mediapost' interest.id %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>
+        {% endif %}
         {% endfor %}
     </div>
  </div>
