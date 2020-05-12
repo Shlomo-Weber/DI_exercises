@@ -35,7 +35,7 @@
           <p style="text-align:center">{{ media.creator }}</p>
         </div>
         <div class="card-action" style="display:flex; justify-content:space-around">
-            <a href="https://google.com/search?q={{ media.title }} {{ media.creator }}" style=" color:white;"> <button class="waves-effect blue lighten-1 btn-large">Find out more</button></a>
+            <a target="_blank" href="https://google.com/search?q={{ media.title }} {{ media.creator }}" style=" color:white;"> <button class="waves-effect blue lighten-1 btn-large">Find out more</button></a>
           <a href="{% url 'create_mediapost' media.id %}" style=" color:white;"><button class="waves-effect blue lighten-1 btn-large">Write review</button></a>
         </div>
       </div>

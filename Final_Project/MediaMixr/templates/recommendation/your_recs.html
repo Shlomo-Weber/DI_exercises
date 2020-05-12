@@ -38,7 +38,7 @@
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"> <button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" target="_blank" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"> <button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
           <a style="color:white" href="{% url 'create_mediapost' interest.id %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>
@@ -57,7 +57,7 @@
           <p>{{ interest.type }}</p>
         </div>
         <div class="card-action">
-          <a style="color:white" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"><button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
+          <a style="color:white" target="_blank" href="https://google.com/search?q={{ interest.title }} {{ interest.creator }}"><button class="waves-effect blue lighten-1 btn-small">Check out more</button></a>
           <a style="color:white" href="{% url 'create_mediapost' interest.id %}"><button class="waves-effect blue lighten-1 btn-small">Write review</button></a>
         </div>
       </div>

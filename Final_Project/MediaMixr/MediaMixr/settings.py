@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'MediaMixr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Media Mixr',
+        'NAME': 'Media',
         'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': 'postgres'
